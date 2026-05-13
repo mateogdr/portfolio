@@ -81,48 +81,64 @@ export function CV() {
     <>
       <SectionWrapper id="cv">
         <FadeIn>
-          <div className="flex flex-col items-center rounded-2xl border border-gray-200 bg-gray-50 px-8 py-14 text-center sm:py-16">
-            {/* Icon */}
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-gray-200 bg-white shadow-sm">
-              <FileText size={22} className="text-gray-700" />
+          <div className="relative overflow-hidden rounded-2xl border border-gray-200">
+            {/* Blurred CV background */}
+            <div className="absolute inset-0 overflow-hidden">
+              <iframe
+                src="/cv.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                className="pointer-events-none h-full w-full"
+                style={{ filter: "blur(2px)", opacity: 0.35 }}
+                title="CV background"
+              />
             </div>
 
-            {/* Text */}
-            <h2 className="text-2xl font-semibold tracking-tight text-gray-950 sm:text-3xl">
-              Curriculum Vitae
-            </h2>
-            <p className="mt-3 max-w-md text-base text-gray-500">
-              A summary of my education, projects, skills, and experience —
-              ready for recruiters and engineers alike.
-            </p>
+            {/* Gradient overlay — keeps text readable */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/70 to-white/80" />
 
-            {/* Actions */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Button
-                onClick={() => setPreviewOpen(true)}
-                variant="secondary"
-                size="lg"
-                icon={<Eye size={16} />}
-                iconPosition="left"
-              >
-                Preview CV
-              </Button>
-              <Button
-                href="/cv.pdf"
-                external
-                variant="primary"
-                size="lg"
-                icon={<Download size={16} />}
-                iconPosition="left"
-              >
-                Download PDF
-              </Button>
+            {/* Content */}
+            <div className="relative z-10 flex flex-col items-center px-8 py-14 text-center sm:py-16">
+              {/* Icon */}
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-gray-200 bg-white shadow-sm">
+                <FileText size={22} className="text-gray-700" />
+              </div>
+
+              {/* Text */}
+              <h2 className="text-2xl font-semibold tracking-tight text-gray-950 sm:text-3xl">
+                Curriculum Vitae
+              </h2>
+              <p className="mt-3 max-w-md text-base text-gray-500">
+                A summary of my education, projects, skills, and experience —
+                ready for recruiters and engineers alike.
+              </p>
+
+              {/* Actions */}
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+                <Button
+                  onClick={() => setPreviewOpen(true)}
+                  variant="secondary"
+                  size="lg"
+                  icon={<Eye size={16} />}
+                  iconPosition="left"
+                >
+                  Preview CV
+                </Button>
+                <Button
+                  href="/cv.pdf"
+                  external
+                  variant="primary"
+                  size="lg"
+                  icon={<Download size={16} />}
+                  iconPosition="left"
+                >
+                  Download PDF
+                </Button>
+              </div>
+
+              {/* Last updated */}
+              <p className="mt-6 text-xs text-gray-400">
+                Last updated: May 2025
+              </p>
             </div>
-
-            {/* Last updated */}
-            <p className="mt-6 text-xs text-gray-400">
-              Last updated: May 2025
-            </p>
           </div>
         </FadeIn>
       </SectionWrapper>
