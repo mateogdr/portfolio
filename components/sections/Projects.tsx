@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+
+const EASE: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
 import Image from "next/image";
 import { ArrowUpRight, Github, ExternalLink, Zap } from "lucide-react";
 import { projects } from "@/lib/data";
@@ -24,7 +26,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: 0.6, ease: EASE }}
       className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-xl hover:shadow-gray-100"
     >
       {/* Image */}

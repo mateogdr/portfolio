@@ -4,6 +4,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
+const EASE: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
+
 interface FadeInProps {
   children: React.ReactNode;
   className?: string;
@@ -42,11 +44,7 @@ export function FadeIn({
       ref={ref}
       initial={initial}
       animate={animate}
-      transition={{
-        duration,
-        delay,
-        ease: [0.21, 0.47, 0.32, 0.98],
-      }}
+      transition={{ duration, delay, ease: EASE }}
       className={cn(className)}
     >
       {children}
@@ -100,7 +98,7 @@ export function StaggerItem({
         visible: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] },
+          transition: { duration: 0.5, ease: EASE },
         },
       }}
       className={cn(className)}

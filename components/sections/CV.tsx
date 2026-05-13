@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const EASE: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
 import { Download, Eye, X, FileText } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Button } from "@/components/ui/Button";
@@ -24,7 +26,7 @@ function CVPreviewModal({ onClose }: { onClose: () => void }) {
           initial={{ opacity: 0, scale: 0.96, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 16 }}
-          transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
+          transition={{ duration: 0.25, ease: EASE }}
           className="relative flex w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
