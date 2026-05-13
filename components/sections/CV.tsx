@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const EASE: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
@@ -11,6 +11,12 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { personalInfo } from "@/lib/data";
 
 function CVPreviewModal({ onClose }: { onClose: () => void }) {
+  // Bloquea el scroll del body mientras el modal está abierto
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = ""; };
+  }, []);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -60,15 +66,16 @@ function CVPreviewModal({ onClose }: { onClose: () => void }) {
             </div>
           </div>
 
-          {/* PDF iframe — expandido en todos los lados para ocultar chrome del visor */}
+          {/* PDF iframe — centrado y expandido para ocultar chrome del visor */}
           <div className="relative h-[70vh] w-full overflow-hidden bg-white">
             <iframe
               src="/cv.pdf#toolbar=0&navpanes=0&scrollbar=0"
               className="absolute"
               style={{
                 top: "-48px",
-                left: "-18px",
-                width: "calc(100% + 56px)",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "calc(100% + 40px)",
                 height: "calc(100% + 68px)",
               }}
               title="CV Preview"
