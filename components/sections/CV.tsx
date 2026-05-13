@@ -68,7 +68,7 @@ function CVPreviewModal({ onClose }: { onClose: () => void }) {
               style={{
                 top: "-48px",
                 left: "-18px",
-                width: "calc(100% + 36px)",
+                width: "calc(100% + 56px)",
                 height: "calc(100% + 68px)",
               }}
               title="CV Preview"
