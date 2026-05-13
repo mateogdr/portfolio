@@ -16,25 +16,25 @@ Live at [portfolio-mateo-garrido-s-projects.vercel.app](https://portfolio-mateo-
 
 1. Clone the repo and install dependencies:
 
-\```bash
+```bash
 git clone https://github.com/mateogdr/portfolio
 cd portfolio
 npm install
-\```
+```
 
-2. Create a `.env.local` file in the root with your Resend API key:
+2. Create a `.env.local` file in the root:
 
-\```
+```
 RESEND_API_KEY=your_key_here
-\```
+```
 
 3. Start the dev server:
 
-\```bash
+```bash
 npm run dev
-\```
+```
 
-Open [http://localhost:3000](http://localhost:3000) to view it locally.
+Open http://localhost:3000 to view it locally.
 
 ## Scripts
 
