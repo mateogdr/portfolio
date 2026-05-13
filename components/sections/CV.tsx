@@ -60,14 +60,16 @@ function CVPreviewModal({ onClose }: { onClose: () => void }) {
             </div>
           </div>
 
-          {/* PDF iframe — overflow hidden oculta la toolbar de Chrome */}
-          <div className="relative h-[70vh] w-full overflow-hidden bg-gray-50">
+          {/* PDF iframe — expandido en todos los lados para ocultar chrome del visor */}
+          <div className="relative h-[70vh] w-full overflow-hidden bg-white">
             <iframe
               src="/cv.pdf#toolbar=0&navpanes=0&scrollbar=0"
-              className="absolute inset-0 w-full"
+              className="absolute"
               style={{
-                height: "calc(100% + 48px)",
-                marginTop: "-48px",
+                top: "-48px",
+                left: "-18px",
+                width: "calc(100% + 36px)",
+                height: "calc(100% + 68px)",
               }}
               title="CV Preview"
             />
@@ -86,15 +88,21 @@ export function CV() {
       <SectionWrapper id="cv">
         <FadeIn>
           <div className="relative overflow-hidden rounded-2xl border border-gray-200">
-            {/* Blurred CV background */}
+            {/* Blurred CV background — iframe expandido para ocultar el chrome del visor */}
             <div className="absolute inset-0 overflow-hidden">
               <iframe
                 src="/cv.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                className="pointer-events-none h-full w-full"
-                style={{ opacity: 0.25 }}
+                className="pointer-events-none absolute"
+                style={{
+                  opacity: 0.28,
+                  top: "-48px",
+                  left: "-5%",
+                  width: "110%",
+                  height: "calc(100% + 68px)",
+                }}
                 title="CV background"
               />
-              {/* Blur layer sin color */}
+              {/* Blur transparente sin color */}
               <div className="absolute inset-0 backdrop-blur-sm" />
             </div>
 
