@@ -144,7 +144,7 @@ export function Contact() {
                   Message sent!
                 </h3>
                 <p className="mt-2 text-sm text-gray-500">
-                  Thanks for reaching out. I'll get back to you within 24
+                  Thanks for reaching out. I&apos;ll get back to you within 24
                   hours.
                 </p>
                 <button
