@@ -135,7 +135,6 @@ export function Hero() {
             {[
               { value: "1+", label: "Projects shipped" },
               { value: "1+", label: "Years coding" },
-              { value: "9.1", label: "Bachillerato GPA" },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl font-semibold text-gray-950">
