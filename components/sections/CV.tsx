@@ -91,13 +91,12 @@ export function CV() {
               <iframe
                 src="/cv.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
                 className="pointer-events-none h-full w-full"
-                style={{ filter: "blur(2px)", opacity: 0.35 }}
+                style={{ opacity: 0.25 }}
                 title="CV background"
               />
+              {/* Blur layer sin color */}
+              <div className="absolute inset-0 backdrop-blur-sm" />
             </div>
-
-            {/* Gradient overlay — keeps text readable */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/70 to-white/80" />
 
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center px-8 py-14 text-center sm:py-16">
