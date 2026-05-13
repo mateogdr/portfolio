@@ -92,8 +92,8 @@ export function CV() {
               Curriculum Vitae
             </h2>
             <p className="mt-3 max-w-md text-base text-gray-500">
-              A one-page summary of my education, projects, skills, and
-              experience — ready for recruiters and engineers alike.
+              A summary of my education, projects, skills, and experience —
+              ready for recruiters and engineers alike.
             </p>
 
             {/* Actions */}

@@ -1,7 +1,8 @@
 "use client";
 
-import { Briefcase, GraduationCap, Trophy } from "lucide-react";
+import { Briefcase, GraduationCap, Trophy, BookOpen } from "lucide-react";
 import { timeline } from "@/lib/data";
+import { Fragment } from "react";
 import type { TimelineItem } from "@/types";
 import { SectionWrapper, SectionHeader } from "@/components/ui/SectionWrapper";
 import { TechBadge } from "@/components/ui/Badge";
@@ -26,6 +27,11 @@ const typeConfig: Record<
     icon: Trophy,
     color: "text-amber-600",
     bg: "bg-amber-50 border-amber-100",
+  },
+  course: {
+    icon: BookOpen,
+    color: "text-violet-600",
+    bg: "bg-violet-50 border-violet-100",
   },
 };
 
@@ -104,11 +110,28 @@ export function Experience() {
         />
       </FadeIn>
 
+      {/* Education & Work */}
       <div className="relative">
-        {timeline.map((item, index) => (
+        {timeline.filter((i) => i.type !== "course").map((item, index) => (
           <TimelineCard key={item.id} item={item} index={index} />
         ))}
       </div>
+
+      {/* Formación complementaria */}
+      {timeline.some((i) => i.type === "course") && (
+        <Fragment>
+          <FadeIn>
+            <p className="mb-6 mt-4 text-xs font-semibold uppercase tracking-widest text-gray-400">
+              Formación complementaria
+            </p>
+          </FadeIn>
+          <div className="relative">
+            {timeline.filter((i) => i.type === "course").map((item, index) => (
+              <TimelineCard key={item.id} item={item} index={index} />
+            ))}
+          </div>
+        </Fragment>
+      )}
     </SectionWrapper>
   );
 }

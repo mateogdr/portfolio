@@ -12,8 +12,6 @@ export function Footer() {
           <p className="text-sm text-gray-400">
             © {year}{" "}
             <span className="text-gray-600 font-medium">{personalInfo.name}</span>
-            {" · "}
-            Built with Next.js & Tailwind CSS
           </p>
 
           <div className="flex items-center gap-1">

@@ -15,7 +15,7 @@ export interface Project {
 
 export interface TimelineItem {
   id: string;
-  type: "work" | "education" | "achievement";
+  type: "work" | "education" | "achievement" | "course";
   title: string;
   organization: string;
   location?: string;
