@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 const EASE: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
 import Image from "next/image";
