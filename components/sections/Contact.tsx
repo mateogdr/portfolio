@@ -12,14 +12,14 @@ import { cn } from "@/lib/utils";
 const socialLinks = [
   {
     label: "GitHub",
-    value: "@mateg",
+    value: "@mateogdr",
     href: personalInfo.github,
     icon: Github,
     description: "Code & open source",
   },
   {
     label: "LinkedIn",
-    value: "Mateo García",
+    value: "Mateo Garrido",
     href: personalInfo.linkedin,
     icon: Linkedin,
     description: "Professional profile",
