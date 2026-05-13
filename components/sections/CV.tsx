@@ -60,11 +60,15 @@ function CVPreviewModal({ onClose }: { onClose: () => void }) {
             </div>
           </div>
 
-          {/* PDF iframe embed */}
-          <div className="h-[70vh] w-full bg-gray-50">
+          {/* PDF iframe — overflow hidden oculta la toolbar de Chrome */}
+          <div className="relative h-[70vh] w-full overflow-hidden bg-gray-50">
             <iframe
-              src="/cv.pdf"
-              className="h-full w-full"
+              src="/cv.pdf#toolbar=0&navpanes=0&scrollbar=0"
+              className="absolute inset-0 w-full"
+              style={{
+                height: "calc(100% + 48px)",
+                marginTop: "-48px",
+              }}
               title="CV Preview"
             />
           </div>
