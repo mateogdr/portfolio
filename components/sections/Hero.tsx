@@ -30,7 +30,7 @@ export function Hero() {
     <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white pt-16">
       {/* Subtle grid background */}
       <div
-        className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid-sm opacity-[0.35]"
+        className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid-sm opacity-[0.65]"
         aria-hidden="true"
       />
 
