@@ -12,7 +12,7 @@ export const personalInfo = {
   ],
   email: "mategdr@gmail.com",
   github: "https://github.com/mateogdr",
-  linkedin: "https://linkedin.com/in/mateogarrido",
+  linkedin: "https://www.linkedin.com/in/mateogarridodelrio",
   location: "Madrid, Spain",
   available: true,
 };
