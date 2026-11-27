@@ -154,7 +154,7 @@ export function CV() {
 
               {/* Last updated */}
               <p className="mt-6 text-xs text-gray-400">
-                Last updated: May 2025
+                Last updated: Nov 2026
               </p>
             </div>
           </div>
