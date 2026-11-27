@@ -122,28 +122,26 @@ export const timeline: TimelineItem[] = [
   },
   // ── Certificates & courses ────────────────────────────────────────────────
   {
-    id: "agent-skills",
-    type: "course",
-    title: "Introduction to Agent Skills",
-    organization: "Anthropic",
-    period: "Aug 2026",
-    description: "10-hour course.",
-  },
-  {
-    id: "genai-llms",
-    type: "course",
-    title: "Introduction to Generative AI through Large Language Models",
-    organization: "Universidad Politécnica de Madrid",
-    period: "Sep 2025",
-    description: "50-hour course.",
-  },
-  {
     id: "ielts",
     type: "course",
     title: "IELTS 7.0 · English C1",
     organization: "Madrid",
     period: "Oct 2026",
     description: "Official English exam, overall band score 7.0 (C1 level).",
+  },  {
+    id: "agent-skills",
+    type: "course",
+    title: "Introduction to Agent Skills",
+    organization: "Anthropic",
+    period: "Aug 2026",
+    description: "10-hour course.",
+  },  {
+    id: "genai-llms",
+    type: "course",
+    title: "Introduction to Generative AI through Large Language Models",
+    organization: "Universidad Politécnica de Madrid",
+    period: "Sep 2025",
+    description: "50-hour course.",
   },
 ];
 
