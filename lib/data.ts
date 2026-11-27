@@ -63,8 +63,9 @@ export const projects: Project[] = [
       "Used MediaPipe and OpenCV in Python, and packaged the system with Docker.",
     ],
     stack: ["Python", "MediaPipe", "OpenCV", "Docker"],
-    image:
-      "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&q=80",
+    image: "/projects/eurichallenge-logo.png",
+    imageFit: "logo",
+    logoBackground: "dark",
     featured: true,
     metrics: ["Built in 48 hours", "Team of three", "Packaged with Docker"],
     status: "completed",

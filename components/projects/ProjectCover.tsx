@@ -40,7 +40,12 @@ export function ProjectCover({
 }) {
   if (project.image && project.imageFit === "logo") {
     return (
-      <div className="absolute inset-0 bg-white transition-transform duration-500 group-hover:scale-[1.03]">
+      <div
+        className={cn(
+          "absolute inset-0 transition-transform duration-500 group-hover:scale-[1.03]",
+          project.logoBackground === "dark" ? "bg-gray-950" : "bg-white",
+        )}
+      >
         <div className={cn("absolute", size === "lg" ? "inset-x-[25%] inset-y-[30%] sm:inset-x-[32%]" : "inset-x-[12%] inset-y-[22%]")}>
           <Image
             src={project.image}
