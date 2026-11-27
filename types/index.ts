@@ -14,6 +14,8 @@ export interface Project {
   image?: string;
   /** "logo" shows the image whole, centred on white, instead of filling the cover. */
   imageFit?: "cover" | "logo";
+  /** Background behind a logo: white (default) or dark, for logos with white parts. */
+  logoBackground?: "light" | "dark";
   highlight?: { value: string; label: string };
   featured: boolean;
   liveUrl?: string;
