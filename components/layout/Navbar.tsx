@@ -32,6 +32,9 @@ export function Navbar() {
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Not on the home page (e.g. a project page): go back to that section.
+      window.location.href = `/${href}`;
     }
   };
 
