@@ -94,22 +94,54 @@ export const projects: Project[] = [
       "Role-based access control",
       "REST API with Swagger docs",
     ],
-    status: "live",
+    status: "completed",
   },
 ];
 
 export const timeline: TimelineItem[] = [
+  // ── Work ──────────────────────────────────────────────────────────────────
+  {
+    id: "gym-instructor",
+    type: "work",
+    title: "Gym Floor Instructor",
+    organization: "Jungle Flow Club (formerly Gorilla Health Club)",
+    location: "Madrid · Part-time",
+    period: "Nov 2023 — Present",
+    current: true,
+    description:
+      "Advise around four members per hour on personalised training and onboard new members.",
+  },
+  {
+    id: "access-control",
+    type: "work",
+    title: "Access Control Staff",
+    organization: "Rock Sound Music S.L.",
+    location: "Madrid · Per event",
+    period: "May 2025 — Jul 2026",
+    description:
+      "Access control and accreditation at large concerts (Ed Sheeran, Bad Bunny) and management of the VIP area.",
+  },
+  {
+    id: "private-tutor",
+    type: "work",
+    title: "Private Tutor",
+    organization: "Self-employed",
+    location: "Madrid",
+    period: "Jun 2023 — Jan 2024",
+    description:
+      "Maths, Physics and Chemistry for two secondary-school students, four hours a week each.",
+  },
+  // ── Education ─────────────────────────────────────────────────────────────
   {
     id: "degree",
     type: "education",
-    title: "Grado en Ingeniería y Sistemas de Datos",
-    organization: "ETSIT — Universidad Politécnica de Madrid",
-    location: "Madrid, Spain",
-    period: "2024 — Present",
+    title: "BSc Data Systems Engineering",
+    organization: "ETSIT, Universidad Politécnica de Madrid",
+    location: "Madrid",
+    period: "Sep 2024 — Jun 2028",
     current: true,
     description:
-      "Specializing in distributed systems, machine learning pipelines, and data architecture at one of Spain's top engineering schools. Coursework includes algorithms, databases, cloud computing, and software design patterns.",
-    technologies: ["Python", "Java", "SQL", "Data Structures", "ML"],
+      "Currently in third year. Key coursework: Relational Databases, NoSQL and Distributed Databases, Programming for Big Data, Massive Data Processing Architectures, Cloud Computing, Machine Learning, Statistical Inference and Time Series, and Optimisation.",
   },
   {
     id: "bachillerato",
@@ -120,18 +152,40 @@ export const timeline: TimelineItem[] = [
     description:
       "Graduated with a 9.1/10 average. Scientific and technological track with focus on mathematics, physics, and technology.",
   },
-  // ── Formación complementaria ──────────────────────────────────────────────
-  // Añade aquí tus cursos, certificaciones y formación extra.
-  // Ejemplo:
-  // {
-  //   id: "curso-python",
-  //   type: "course",
-  //   title: "Python for Data Science",
-  //   organization: "Coursera / Universidad X",
-  //   period: "2025",
-  //   description: "...",
-  //   technologies: ["Python", "Pandas", "NumPy"],
-  // },
+  // ── Certificates & courses ────────────────────────────────────────────────
+  {
+    id: "agent-skills",
+    type: "course",
+    title: "Introduction to Agent Skills",
+    organization: "Anthropic",
+    period: "Aug 2026",
+    description: "10-hour course.",
+  },
+  {
+    id: "genai-llms",
+    type: "course",
+    title: "Introduction to Generative AI through Large Language Models",
+    organization: "Universidad Politécnica de Madrid",
+    period: "Sep 2025",
+    description: "50-hour course.",
+  },
+  {
+    id: "ielts",
+    type: "course",
+    title: "IELTS 7.0 · English C1",
+    organization: "Kaplan International",
+    location: "Torquay, UK",
+    period: "2024",
+    description: "English course in the UK, finished with an IELTS score of 7.0 (C1).",
+  },
+  {
+    id: "b2-first",
+    type: "course",
+    title: "Cambridge B2 First",
+    organization: "Cambridge English",
+    period: "2022",
+    description: "Upper-intermediate English certificate.",
+  },
 ];
 
 export const skills: Skill[] = [

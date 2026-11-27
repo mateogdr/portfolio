@@ -2,7 +2,6 @@
 
 import { Briefcase, GraduationCap, Trophy, BookOpen } from "lucide-react";
 import { timeline } from "@/lib/data";
-import { Fragment } from "react";
 import type { TimelineItem } from "@/types";
 import { SectionWrapper, SectionHeader } from "@/components/ui/SectionWrapper";
 import { TechBadge } from "@/components/ui/Badge";
@@ -99,39 +98,43 @@ function TimelineCard({ item, index }: { item: TimelineItem; index: number }) {
   );
 }
 
+const groups: { label: string; types: TimelineItem["type"][] }[] = [
+  { label: "Work", types: ["work"] },
+  { label: "Education", types: ["education", "achievement"] },
+  { label: "Certificates & courses", types: ["course"] },
+];
+
 export function Experience() {
   return (
     <SectionWrapper id="experience" background="gray">
       <FadeIn>
         <SectionHeader
           label="Experience"
-          title="Background & education."
-          description="My journey in software engineering — from the classroom to client projects and beyond."
+          title="Experience & education."
+          description="Where I've worked, what I'm studying and what I've learned along the way."
         />
       </FadeIn>
 
-      {/* Education & Work */}
-      <div className="relative">
-        {timeline.filter((i) => i.type !== "course").map((item, index) => (
-          <TimelineCard key={item.id} item={item} index={index} />
-        ))}
+      <div className="space-y-6">
+        {groups.map((group) => {
+          const items = timeline.filter((i) => group.types.includes(i.type));
+          if (items.length === 0) return null;
+          return (
+            <div key={group.label}>
+              <FadeIn>
+                <p className="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-400">
+                  {group.label}
+                </p>
+              </FadeIn>
+              <div className="relative">
+                {items.map((item, index) => (
+                  <TimelineCard key={item.id} item={item} index={index} />
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
-
-      {/* Formación complementaria */}
-      {timeline.some((i) => i.type === "course") && (
-        <Fragment>
-          <FadeIn>
-            <p className="mb-6 mt-4 text-xs font-semibold uppercase tracking-widest text-gray-400">
-              Formación complementaria
-            </p>
-          </FadeIn>
-          <div className="relative">
-            {timeline.filter((i) => i.type === "course").map((item, index) => (
-              <TimelineCard key={item.id} item={item} index={index} />
-            ))}
-          </div>
-        </Fragment>
-      )}
     </SectionWrapper>
   );
 }
