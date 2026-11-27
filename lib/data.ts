@@ -99,38 +99,6 @@ export const projects: Project[] = [
 ];
 
 export const timeline: TimelineItem[] = [
-  // ── Work ──────────────────────────────────────────────────────────────────
-  {
-    id: "gym-instructor",
-    type: "work",
-    title: "Gym Floor Instructor",
-    organization: "Jungle Flow Club (formerly Gorilla Health Club)",
-    location: "Madrid · Part-time",
-    period: "Nov 2023 — Present",
-    current: true,
-    description:
-      "Advise around four members per hour on personalised training and onboard new members.",
-  },
-  {
-    id: "access-control",
-    type: "work",
-    title: "Access Control Staff",
-    organization: "Rock Sound Music S.L.",
-    location: "Madrid · Per event",
-    period: "May 2025 — Jul 2026",
-    description:
-      "Access control and accreditation at large concerts (Ed Sheeran, Bad Bunny) and management of the VIP area.",
-  },
-  {
-    id: "private-tutor",
-    type: "work",
-    title: "Private Tutor",
-    organization: "Self-employed",
-    location: "Madrid",
-    period: "Jun 2023 — Jan 2024",
-    description:
-      "Maths, Physics and Chemistry for two secondary-school students, four hours a week each.",
-  },
   // ── Education ─────────────────────────────────────────────────────────────
   {
     id: "degree",
