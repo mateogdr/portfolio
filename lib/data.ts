@@ -36,8 +36,8 @@ export const projects: Project[] = [
       "Fixed the random forest's failure to extrapolate the trend by predicting the ratio to last week's average (9.7% → 8.3% MAPE).",
     ],
     stack: ["Python", "pandas", "scikit-learn", "matplotlib", "Jupyter"],
-    image:
-      "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1600&q=80",
+    image: "/projects/bicimad-logo.png",
+    imageFit: "logo",
     featured: true,
     githubUrl: "https://github.com/mateogdr/proyecto_bicimad",
     metrics: [

@@ -12,6 +12,8 @@ export interface Project {
   stack: string[];
   /** Cover photo. Without one, the card shows `highlight` on a plain cover. */
   image?: string;
+  /** "logo" shows the image whole, centred on white, instead of filling the cover. */
+  imageFit?: "cover" | "logo";
   highlight?: { value: string; label: string };
   featured: boolean;
   liveUrl?: string;

@@ -38,6 +38,23 @@ export function ProjectCover({
   sizes?: string;
   priority?: boolean;
 }) {
+  if (project.image && project.imageFit === "logo") {
+    return (
+      <div className="absolute inset-0 bg-white transition-transform duration-500 group-hover:scale-[1.03]">
+        <div className={cn("absolute", size === "lg" ? "inset-x-[20%] inset-y-[25%]" : "inset-x-[12%] inset-y-[22%]")}>
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            priority={priority}
+            className="object-contain"
+            sizes={sizes}
+          />
+        </div>
+      </div>
+    );
+  }
+
   if (project.image) {
     return (
       <Image
