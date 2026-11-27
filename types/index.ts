@@ -27,7 +27,7 @@ export interface TimelineItem {
 
 export interface Skill {
   name: string;
-  category: "language" | "framework" | "tool" | "cloud" | "ai";
+  category: "language" | "database" | "data" | "backend";
 }
 
 export interface SocialLink {
