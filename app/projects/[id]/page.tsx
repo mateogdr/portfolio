@@ -6,7 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { TechBadge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { ProjectCover, StatusPill } from "@/components/projects/ProjectCover";
+import { StatusPill } from "@/components/projects/ProjectCover";
 import { personalInfo, projects } from "@/lib/data";
 
 type Props = { params: Promise<{ id: string }> };
@@ -74,18 +74,8 @@ export default async function ProjectPage({ params }: Props) {
             <p className="mt-3 text-lg text-gray-500">{project.tagline}</p>
           </header>
 
-          {/* Cover */}
-          <div className="relative mt-8 h-40 w-full overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 sm:h-52">
-            <ProjectCover
-              project={project}
-              size="lg"
-              sizes="(max-width: 1024px) 100vw, 960px"
-              priority
-            />
-          </div>
-
           {/* Body */}
-          <div className="mt-14 grid gap-12 md:grid-cols-[2fr_1fr] md:gap-16">
+          <div className="mt-12 grid gap-12 md:grid-cols-[2fr_1fr] md:gap-16">
             <div className="space-y-12">
               <section>
                 <h2 className="text-xl font-semibold text-gray-950">Overview</h2>
