@@ -5,12 +5,14 @@ export interface Project {
   description: string;
   problem: string;
   stack: string[];
-  image: string;
+  /** Cover photo. Without one, the card shows `highlight` on a plain cover. */
+  image?: string;
+  highlight?: { value: string; label: string };
   featured: boolean;
   liveUrl?: string;
-  githubUrl: string;
+  githubUrl?: string;
   metrics?: string[];
-  status: "live" | "building" | "archived";
+  status: "live" | "completed" | "building" | "archived";
 }
 
 export interface TimelineItem {

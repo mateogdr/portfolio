@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils";
 
 const statusLabel: Record<Project["status"], { label: string; color: string }> = {
   live: { label: "Live", color: "text-emerald-600 bg-emerald-50" },
+  completed: { label: "Completed", color: "text-sky-700 bg-sky-50" },
   building: { label: "Building", color: "text-amber-600 bg-amber-50" },
   archived: { label: "Archived", color: "text-gray-500 bg-gray-100" },
 };
@@ -31,13 +32,30 @@ function FeaturedProjectCard({ project }: { project: Project }) {
     >
       {/* Image */}
       <div className="relative h-52 w-full overflow-hidden bg-gray-50 sm:h-64">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex flex-col items-start justify-end bg-gray-950 p-6 transition-transform duration-500 group-hover:scale-[1.03]">
+            <div
+              className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid-sm opacity-[0.08] invert"
+              aria-hidden="true"
+            />
+            {project.highlight && (
+              <div className="relative">
+                <p className="text-5xl font-semibold tracking-tight text-white sm:text-6xl">
+                  {project.highlight.value}
+                </p>
+                <p className="mt-1 text-sm text-gray-400">{project.highlight.label}</p>
+              </div>
+            )}
+          </div>
+        )}
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-gray-950/0 transition-colors duration-300 group-hover:bg-gray-950/10" />
 
@@ -109,15 +127,17 @@ function FeaturedProjectCard({ project }: { project: Project }) {
               Live Demo
             </Button>
           )}
-          <Button
-            href={project.githubUrl}
-            external
-            variant="secondary"
-            size="sm"
-            icon={<Github size={13} />}
-          >
-            Source
-          </Button>
+          {project.githubUrl && (
+            <Button
+              href={project.githubUrl}
+              external
+              variant="secondary"
+              size="sm"
+              icon={<Github size={13} />}
+            >
+              Source
+            </Button>
+          )}
         </div>
       </div>
     </motion.div>
@@ -154,16 +174,18 @@ function SecondaryProjectCard({ project }: { project: Project }) {
         </div>
       </div>
       <div className="mt-4 flex items-center gap-3 border-t border-gray-100 pt-4">
-        <a
-          href={project.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 text-xs text-gray-400 transition-colors hover:text-gray-700"
-        >
-          <Github size={13} />
-          Repository
-          <ArrowUpRight size={11} />
-        </a>
+        {project.githubUrl && (
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs text-gray-400 transition-colors hover:text-gray-700"
+          >
+            <Github size={13} />
+            Repository
+            <ArrowUpRight size={11} />
+          </a>
+        )}
         {project.liveUrl && (
           <a
             href={project.liveUrl}
@@ -192,7 +214,7 @@ export function Projects() {
         <SectionHeader
           label="Projects"
           title="What I've built."
-          description="A selection of projects spanning AI, automation, data engineering, and full-stack SaaS — each one solving a real problem."
+          description="Data, machine learning and full-stack projects, each one built end to end."
         />
       </FadeIn>
 
@@ -204,29 +226,31 @@ export function Projects() {
       </div>
 
       {/* Secondary */}
-      <div className="mt-12">
-        <FadeIn>
-          <div className="mb-6 flex items-center justify-between">
-            <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
-              Other Projects
-            </h3>
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="text-sm text-gray-400 transition-colors hover:text-gray-700"
-            >
-              {showAll ? "Show less" : `Show all (${secondary.length})`}
-            </button>
-          </div>
-        </FadeIn>
+      {secondary.length > 0 && (
+        <div className="mt-12">
+          <FadeIn>
+            <div className="mb-6 flex items-center justify-between">
+              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
+                Other Projects
+              </h3>
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className="text-sm text-gray-400 transition-colors hover:text-gray-700"
+              >
+                {showAll ? "Show less" : `Show all (${secondary.length})`}
+              </button>
+            </div>
+          </FadeIn>
 
-        <StaggerContainer className="grid gap-4 sm:grid-cols-2">
-          {(showAll ? secondary : secondary.slice(0, 2)).map((project) => (
-            <StaggerItem key={project.id}>
-              <SecondaryProjectCard project={project} />
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-      </div>
+          <StaggerContainer className="grid gap-4 sm:grid-cols-2">
+            {(showAll ? secondary : secondary.slice(0, 2)).map((project) => (
+              <StaggerItem key={project.id}>
+                <SecondaryProjectCard project={project} />
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      )}
     </SectionWrapper>
   );
 }

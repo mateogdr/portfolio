@@ -19,6 +19,39 @@ export const personalInfo = {
 
 export const projects: Project[] = [
   {
+    id: "bicimad-forecast",
+    title: "BiciMAD Demand Forecast",
+    tagline: "Daily demand forecast for Madrid's public bike system",
+    description:
+      "An end-to-end forecasting project. I built a 973-day dataset (Feb 2024 – Sep 2026) joining daily BiciMAD trips from EMT open data with Open-Meteo weather and Madrid holidays, checked it for gaps, duplicates and nulls, and trained a model on a temporal train/test split with lagged features to avoid leakage.",
+    problem:
+      "A random forest can't extrapolate a growing trend. Predicting the ratio to last week's average instead of raw trips fixed it, cutting the error from 9.7% to 8.3% MAPE.",
+    stack: ["Python", "pandas", "scikit-learn", "matplotlib", "Jupyter"],
+    highlight: { value: "8.3%", label: "MAPE vs 13.2% baseline" },
+    featured: true,
+    githubUrl: "https://github.com/mateogdr/proyecto_bicimad",
+    metrics: [
+      "8.3% MAPE vs 13.2% baseline",
+      "973 days of joined open data",
+      "Temporal split, no leakage",
+    ],
+    status: "completed",
+  },
+  {
+    id: "eurichallenge-2026",
+    title: "EURIChallenge 2026",
+    tagline: "Hackathon · Computer vision for rehabilitation",
+    description:
+      "Built in 48 hours with a team of three at the hackathon organised by Eurielec and EESTEC LC Madrid at ETSIT-UPM: a computer vision system that detects and evaluates rehabilitation exercises (shoulder abduction and squat), packaged with Docker.",
+    problem:
+      "Patients doing rehabilitation exercises at home have no one checking their form. The system detects the exercise from video and evaluates how it is performed.",
+    stack: ["Python", "MediaPipe", "OpenCV", "Docker"],
+    highlight: { value: "48h", label: "Hackathon · Nov 2026" },
+    featured: true,
+    metrics: ["Built in 48 hours", "Team of three", "Packaged with Docker"],
+    status: "completed",
+  },
+  {
     id: "mundo-tenis",
     title: "Mundo Tenis",
     tagline: "Full-stack tennis club management platform",
