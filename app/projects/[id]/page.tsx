@@ -75,7 +75,7 @@ export default async function ProjectPage({ params }: Props) {
           </header>
 
           {/* Cover */}
-          <div className="relative mt-10 h-56 w-full overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 sm:h-80">
+          <div className="relative mt-8 h-40 w-full overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 sm:h-52">
             <ProjectCover
               project={project}
               size="lg"
