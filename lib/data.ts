@@ -36,7 +36,8 @@ export const projects: Project[] = [
       "Fixed the random forest's failure to extrapolate the trend by predicting the ratio to last week's average (9.7% → 8.3% MAPE).",
     ],
     stack: ["Python", "pandas", "scikit-learn", "matplotlib", "Jupyter"],
-    highlight: { value: "8.3%", label: "MAPE vs 13.2% baseline" },
+    image:
+      "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=1600&q=80",
     featured: true,
     githubUrl: "https://github.com/mateogdr/proyecto_bicimad",
     metrics: [
@@ -62,7 +63,8 @@ export const projects: Project[] = [
       "Used MediaPipe and OpenCV in Python, and packaged the system with Docker.",
     ],
     stack: ["Python", "MediaPipe", "OpenCV", "Docker"],
-    highlight: { value: "48h", label: "Hackathon · Nov 2026" },
+    image:
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&q=80",
     featured: true,
     metrics: ["Built in 48 hours", "Team of three", "Packaged with Docker"],
     status: "completed",
@@ -83,7 +85,7 @@ export const projects: Project[] = [
     ],
     stack: ["Python", "Flask", "SQLAlchemy", "MySQL", "REST API", "HTML", "CSS"],
     image:
-      "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800&q=80",
+      "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1600&q=80",
     featured: true,
     githubUrl: "https://github.com/mateogdr/mundo-tenis",
     metrics: [
