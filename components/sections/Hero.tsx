@@ -134,6 +134,7 @@ export function Hero() {
           >
             {[
               { value: "3", label: "Projects built" },
+              { value: "2+", label: "Years coding" },
               { value: "3rd year", label: "Data Systems Eng. · UPM" },
               { value: "C1", label: "English · IELTS 7.0" },
             ].map((stat) => (
