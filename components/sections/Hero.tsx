@@ -133,8 +133,9 @@ export function Hero() {
             className="mt-16 flex flex-wrap items-center gap-8 border-t border-gray-100 pt-8"
           >
             {[
-              { value: "1+", label: "Projects shipped" },
-              { value: "1+", label: "Years coding" },
+              { value: "3", label: "Projects built" },
+              { value: "3rd year", label: "Data Systems Eng. · UPM" },
+              { value: "C1", label: "English · IELTS 7.0" },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl font-semibold text-gray-950">

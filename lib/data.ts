@@ -4,7 +4,7 @@ export const personalInfo = {
   name: "Mateo Garrido del Río",
   title: "Data Systems Engineering Student",
   subtitle:
-    "Building AI tools, automation systems and scalable web applications.",
+    "Third-year student at ETSIT-UPM building end-to-end data projects in Python and SQL, from collecting and cleaning open data to modelling and evaluating it.",
   bio: [
     "I'm a Data Systems Engineering student at ETSIT UPM with a strong focus on building things that actually work at scale. I care deeply about clean architecture, developer experience, and shipping products that solve real problems.",
     "My work spans across AI-powered tools, automation pipelines, and full-stack web applications. I'm particularly drawn to the intersection of data engineering and product — where raw information becomes something genuinely useful.",
