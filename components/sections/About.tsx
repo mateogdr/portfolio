@@ -28,7 +28,7 @@ export function About() {
           <FadeIn>
             <SectionHeader
               label="About"
-              title="Building things that matter."
+              title="From raw data to working models."
               description=""
             />
           </FadeIn>
@@ -47,12 +47,12 @@ export function About() {
           <FadeIn delay={0.3}>
             <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
               {[
-                { emoji: "⚡", label: "Fast learner" },
-                { emoji: "🔨", label: "Builder mindset" },
-                { emoji: "🎯", label: "Result-driven" },
-                { emoji: "🤖", label: "AI-first approach" },
                 { emoji: "📊", label: "Data-driven" },
-                { emoji: "🚀", label: "Ship fast" },
+                { emoji: "🔨", label: "Builder mindset" },
+                { emoji: "⚡", label: "Fast learner" },
+                { emoji: "📈", label: "Quant finance" },
+                { emoji: "🎾", label: "Tennis · 11 yrs" },
+                { emoji: "🏋️", label: "Strength · 6 yrs" },
               ].map((v) => (
                 <div
                   key={v.label}
