@@ -141,18 +141,9 @@ export const timeline: TimelineItem[] = [
     id: "ielts",
     type: "course",
     title: "IELTS 7.0 · English C1",
-    organization: "Kaplan International",
-    location: "Torquay, UK",
-    period: "2024",
-    description: "English course in the UK, finished with an IELTS score of 7.0 (C1).",
-  },
-  {
-    id: "b2-first",
-    type: "course",
-    title: "Cambridge B2 First",
-    organization: "Cambridge English",
-    period: "2022",
-    description: "Upper-intermediate English certificate.",
+    organization: "Madrid",
+    period: "Oct 2026",
+    description: "Official English exam, overall band score 7.0 (C1 level).",
   },
 ];
 
