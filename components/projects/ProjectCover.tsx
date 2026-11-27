@@ -29,14 +29,10 @@ export function StatusPill({ status }: { status: Project["status"] }) {
  */
 export function ProjectCover({
   project,
-  size = "md",
   sizes = "(max-width: 768px) 100vw, 50vw",
-  priority,
 }: {
   project: Project;
-  size?: "md" | "lg";
   sizes?: string;
-  priority?: boolean;
 }) {
   if (project.image && project.imageFit === "logo") {
     return (
@@ -46,12 +42,11 @@ export function ProjectCover({
           project.logoBackground === "dark" ? "bg-gray-950" : "bg-white",
         )}
       >
-        <div className={cn("absolute", size === "lg" ? "inset-x-[25%] inset-y-[30%] sm:inset-x-[32%]" : "inset-x-[12%] inset-y-[22%]")}>
+        <div className="absolute inset-x-[12%] inset-y-[22%]">
           <Image
             src={project.image}
             alt={project.title}
             fill
-            priority={priority}
             className="object-contain"
             sizes={sizes}
           />
@@ -66,7 +61,6 @@ export function ProjectCover({
         src={project.image}
         alt={project.title}
         fill
-        priority={priority}
         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         sizes={sizes}
       />
@@ -82,10 +76,7 @@ export function ProjectCover({
       {project.highlight && (
         <div className="relative">
           <p
-            className={cn(
-              "font-semibold tracking-tight text-white",
-              size === "lg" ? "text-6xl sm:text-7xl" : "text-5xl",
-            )}
+            className="text-5xl font-semibold tracking-tight text-white"
           >
             {project.highlight.value}
           </p>
