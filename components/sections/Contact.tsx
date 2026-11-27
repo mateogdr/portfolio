@@ -83,7 +83,7 @@ export function Contact() {
             <SectionHeader
               label="Contact"
               title="Let's work together."
-              description="I'm actively looking for internship and junior positions in software engineering, AI, or data. Open to remote or on-site opportunities."
+              description="I'm looking for internships in data engineering, data science and machine learning. Based in Madrid and open to on-site, hybrid or remote roles."
             />
           </FadeIn>
 
@@ -95,7 +95,7 @@ export function Contact() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
               <span className="text-sm font-medium text-emerald-700">
-                Available for new opportunities
+                Open to internships
               </span>
             </div>
           </FadeIn>
@@ -129,13 +129,13 @@ export function Contact() {
         </div>
 
         {/* Right: contact form */}
-        <FadeIn delay={0.15}>
-          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
+        <FadeIn delay={0.15} className="h-full">
+          <div className="flex h-full flex-col rounded-2xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
             {formState === "success" ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex h-full min-h-[320px] flex-col items-center justify-center text-center"
+                className="flex min-h-[320px] flex-1 flex-col items-center justify-center text-center"
               >
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50">
                   <CheckCircle size={24} className="text-emerald-600" />
@@ -158,12 +158,12 @@ export function Contact() {
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <form onSubmit={handleSubmit} className="flex flex-1 flex-col gap-4">
                 {formState === "error" && (
                   <div className="rounded-lg border border-red-100 bg-red-50 px-4 py-3 text-sm text-red-600">
                     Something went wrong. Please try emailing directly at{" "}
-                    <a href="mailto:mategdr@gmail.com" className="underline underline-offset-2">
-                      mategdr@gmail.com
+                    <a href={`mailto:${personalInfo.email}`} className="underline underline-offset-2">
+                      {personalInfo.email}
                     </a>
                   </div>
                 )}
@@ -205,7 +205,7 @@ export function Contact() {
                   />
                 </div>
 
-                <div>
+                <div className="flex flex-1 flex-col">
                   <label
                     htmlFor="message"
                     className="mb-1.5 block text-xs font-medium text-gray-600"
@@ -220,7 +220,7 @@ export function Contact() {
                     placeholder="Tell me about the role or project..."
                     value={form.message}
                     onChange={handleChange}
-                    className={cn(inputClass, "resize-none")}
+                    className={cn(inputClass, "flex-1 resize-none")}
                   />
                 </div>
 
