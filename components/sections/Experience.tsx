@@ -99,7 +99,6 @@ function TimelineCard({ item, index }: { item: TimelineItem; index: number }) {
 }
 
 const groups: { label: string; types: TimelineItem["type"][] }[] = [
-  { label: "Work", types: ["work"] },
   { label: "Education", types: ["education", "achievement"] },
   { label: "Certificates & courses", types: ["course"] },
 ];
@@ -109,9 +108,9 @@ export function Experience() {
     <SectionWrapper id="experience" background="gray">
       <FadeIn>
         <SectionHeader
-          label="Experience"
-          title="Experience & education."
-          description="Where I've worked, what I'm studying and what I've learned along the way."
+          label="Background"
+          title="Education & certificates."
+          description="What I'm studying and what I've learned along the way."
         />
       </FadeIn>
 
