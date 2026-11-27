@@ -4,6 +4,11 @@ export interface Project {
   tagline: string;
   description: string;
   problem: string;
+  /** Shown on the project page under "What I did". */
+  details?: string[];
+  /** e.g. "Personal project" or the organiser of a hackathon. */
+  context?: string;
+  period?: string;
   stack: string[];
   /** Cover photo. Without one, the card shows `highlight` on a plain cover. */
   image?: string;
